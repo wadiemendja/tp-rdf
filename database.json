@@ -1,0 +1,40 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "backend": "Excelent",
+            "frontend": "Moyenne",
+            "fullstack": "Oui"
+        },
+        {
+            "id": 2,
+            "backend": "Fable",
+            "frontend": "Excelent",
+            "fullstack": "Non"
+        },
+        {
+            "id": 3,
+            "backend": "Moyenne",
+            "frontend": "Moyenne",
+            "fullstack": "Non"
+        },
+        {
+            "id": 4,
+            "backend": "Moyenne",
+            "frontend": "Excelent",
+            "fullstack": "Oui"
+        },
+        {
+            "id": 5,
+            "backend": "Fable",
+            "frontend": "Fable",
+            "fullstack": "Non"
+        },
+        {
+            "id": 6,
+            "backend": "Excelent",
+            "frontend": "Fable",
+            "fullstack": "Non"
+        }
+    ]
+}
