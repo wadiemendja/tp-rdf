@@ -2,7 +2,7 @@
 // Author: Mendja Wadie
 
 const fs = require('fs'); // node file system
-const readline = require('readline').createInterface({
+const readline = require('readline').createInterface({ // node IO Stream
     input: process.stdin,
     output: process.stdout
 });
@@ -20,12 +20,11 @@ fs.readFile('./database.json', (err, databaseContent) => { // reading databse.js
     }
     showData(data, c); // display the table of data
     let distances = calculateDistances(data, c); // returns an array of distances
-    distances = distances.sort(); console.log(distances) // trie par order croissante 
+    distances = distances.sort(); console.log("\nTri:\n-----\n");console.log(distances)// trie par order croissante 
     results(distances); //  show results
 });
 
 function showData(data, c) { // affichage
-    console.log(data);
     console.log("  ---------------------------------------------------------  ");
     console.log("    id    |    Backend    |    ForntEnd    |    FullStack    ");
     console.log("  ---------------------------------------------------------  ");
@@ -57,13 +56,15 @@ function calculateDistances(data, c) { // calculating distances
 }
 
 function results(distances) { // dispalying results
-    readline.question('Entrer K = ', k => {
-        let nbrOui, nbrNon;
+    console.log();
+    readline.question('Entrer K = ', input => {
+        const k = parseInt(input);
+        let nbrOui = nbrNon = 0;
         for (let i = 0; i < k; i++) {
             if (distances[i][1] == "Oui") nbrOui++;
             else nbrNon++;
         }
-        if (nbrOui > nbrNon) console.log("REsultat = Oui"); else console.log("Resultat = Non");
+        if (nbrOui > nbrNon) console.log("Resultat = Oui"); else console.log("Resultat = Non");
         readline.close();
     });
 }
